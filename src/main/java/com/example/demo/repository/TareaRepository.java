@@ -10,5 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TareaRepository extends JpaRepository<Tarea, Long> {
+
+    @Query("SELECT t FROM Tarea t WHERE t.status = 'PENDIENTE'")
     List<Tarea> findByStatusPendiente();
 }

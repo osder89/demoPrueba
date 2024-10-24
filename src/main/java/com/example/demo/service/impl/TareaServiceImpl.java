@@ -5,6 +5,7 @@ import com.example.demo.model.Tarea;
 import com.example.demo.model.dto.TareaDto;
 import com.example.demo.repository.TareaRepository;
 import com.example.demo.service.TareaService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -40,9 +41,17 @@ public class TareaServiceImpl implements TareaService {
     }
 
     @Override
-    public TareaDto update(Long idTarea, TareaDto tareaDto) {
-        return null;
+    public void completeTarea(Long idTarea) {
+        Optional<Tarea> tareaOptional = tareaRepository.findById(idTarea);
+        if (tareaOptional.isPresent()) {
+            Tarea tarea = tareaOptional.get();
+            tarea.setStatus(TareaState.FINALIZADA);
+            tareaRepository.save(tarea);  
+        } else {
+            throw new EntityNotFoundException("La tarea con ID: " + idTarea + " no fue encontrada.");
+        }
     }
+
 
     @Override
     public void delete(Long idtarea) {
@@ -56,6 +65,11 @@ public class TareaServiceImpl implements TareaService {
     @Override
     public List<Tarea> listAll() {
         return tareaRepository.findAll();
+    }
+
+    @Override
+    public Optional<Tarea> listById(Long idTarea) {
+        return tareaRepository.findById(idTarea);
     }
 
     @Override

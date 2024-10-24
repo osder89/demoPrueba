@@ -49,6 +49,7 @@ public class DemoApplication {
                 }else if ("3".equals(opcion)) {
                     System.out.print("Ingrese el codigo de la tarea: ");
                     String codigo = scanner.nextLine();
+                    tareaService.completeTarea(Long.parseLong(codigo));
                 }else if ("4".equals(opcion)) {
                     System.out.println(tareaService.findByStatusPendiente());
                 }else if ("5".equals(opcion)) {
@@ -64,4 +65,6 @@ public class DemoApplication {
             scanner.close();
         };
     }
+    // todo Se implemento el siguiente modulo siguiendo una arquitectura MVC ya que da un enfoque claro a la hora de implementar
+    //todo nuevas tablas y nuevos modulos. Siendo esta una arquitectura que permite ser escalable pudiendo ser micro servicios o como un modulo en concreto
 }

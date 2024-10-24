@@ -1,0 +1,10 @@
+INSERT INTO tarea (name, description, status) VALUES ('Revisión de Código', 'Revisar el código del módulo de autenticación para asegurar la calidad.', 'PENDIENTE');
+INSERT INTO tarea (name, description, status) VALUES ('Documentación de API', 'Crear documentación para la API REST del proyecto.', 'PENDIENTE');
+INSERT INTO tarea (name, description, status) VALUES ('Pruebas Unitarias', 'Escribir pruebas unitarias para la clase de servicio de usuario.', 'PENDIENTE');
+INSERT INTO tarea (name, description, status) VALUES ('Implementar Nueva Funcionalidad', 'Agregar la funcionalidad de búsqueda avanzada en la aplicación.', 'PENDIENTE');
+INSERT INTO tarea (name, description, status) VALUES ('Optimización de Base de Datos', 'Optimizar consultas SQL para mejorar el rendimiento.', 'PENDIENTE');
+INSERT INTO tarea (name, description, status) VALUES ('Reunión de Equipo', 'Realizar una reunión de seguimiento con el equipo de desarrollo.', 'PENDIENTE');
+INSERT INTO tarea (name, description, status) VALUES ('Despliegue en Producción', 'Preparar y realizar el despliegue en el servidor de producción.', 'PENDIENTE');
+INSERT INTO tarea (name, description, status) VALUES ('Actualización de Dependencias', 'Actualizar las dependencias del proyecto a sus últimas versiones.', 'PENDIENTE');
+INSERT INTO tarea (name, description, status) VALUES ('Mantenimiento de Servidor', 'Revisar el estado del servidor y aplicar las actualizaciones necesarias.', 'PENDIENTE');
+INSERT INTO tarea (name, description, status) VALUES ('Revisión de Feedback del Usuario', 'Analizar el feedback recibido de los usuarios para futuras mejoras.', 'PENDIENTE');

@@ -1,6 +1,7 @@
 package com.example.demo.model.dto;
 
 import com.example.demo.emuns.TareaState;
+import com.example.demo.model.Tarea;
 import lombok.*;
 
 import java.io.Serializable;
@@ -23,8 +24,11 @@ public class TareaDto implements Serializable {
         this.status = status;
     }
 
-    public TareaDto(String nombre, String descripcion) {
-        this.name = nombre;
-        this.description = descripcion;
+    public void TareaDtoToEntity(Tarea tarea){
+        this.id = tarea.getId();
+        this.name = tarea.getName();
+        this.description = tarea.getDescription();
+        this.status = tarea.getStatus();
     }
+
 }
