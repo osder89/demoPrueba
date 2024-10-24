@@ -25,8 +25,11 @@ public class DemoApplication {
             while (true) {
                 System.out.println("Seleccione una opción:");
                 System.out.println("1. Crear tarea");
-                System.out.println("1. Listar tareas");
-                System.out.println("2. Salir");
+                System.out.println("2. Listar tareas");
+                System.out.println("3. Actualizar tarea");
+                System.out.println("4. Listar tareas pendientes");
+                System.out.println("5. Eliminar tarea");
+                System.out.println("6. Salir");
 
                 String opcion = scanner.nextLine();
                 if ("1".equals(opcion)) {
@@ -44,6 +47,15 @@ public class DemoApplication {
                 } else if ("2".equals(opcion)) {
                     System.out.println(tareaService.listAll());
                 }else if ("3".equals(opcion)) {
+                    System.out.print("Ingrese el codigo de la tarea: ");
+                    String codigo = scanner.nextLine();
+                }else if ("4".equals(opcion)) {
+                    System.out.println(tareaService.findByStatusPendiente());
+                }else if ("5".equals(opcion)) {
+                    System.out.print("Ingrese el codigo de la tarea: ");
+                    String codigo = scanner.nextLine();
+                    tareaService.delete(Long.parseLong(codigo));
+                }else if ("6".equals(opcion)) {
                     break;
                 } else {
                     System.out.println("Opción no válida. Inténtelo de nuevo.");

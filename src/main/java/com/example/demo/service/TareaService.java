@@ -11,7 +11,7 @@ public interface TareaService {
 
     TareaDto update(Long idTarea, TareaDto tareaDto );
 
-    void delete(Tarea tarea);
+    void delete(Long idTarea);
 
     List<Tarea> listAll();
 

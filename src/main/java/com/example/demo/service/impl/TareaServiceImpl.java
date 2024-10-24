@@ -12,7 +12,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -39,8 +45,12 @@ public class TareaServiceImpl implements TareaService {
     }
 
     @Override
-    public void delete(Tarea tarea) {
-        tareaRepository.delete(tarea);
+    public void delete(Long idtarea) {
+        Optional<Tarea> tareaOptional = tareaRepository.findById(idtarea);
+        if (tareaOptional.isPresent()) {
+            Tarea tarea = tareaOptional.get();
+            tareaRepository.delete(tarea);
+        }
     }
 
     @Override
@@ -50,7 +60,7 @@ public class TareaServiceImpl implements TareaService {
 
     @Override
     public List<Tarea> findByStatusPendiente() {
-        return null;
+        return tareaRepository.findByStatusPendiente();
     }
 
     public void validateStrings(String value) {
@@ -58,7 +68,5 @@ public class TareaServiceImpl implements TareaService {
             throw new IllegalArgumentException("El valor no puede ser nulo o vacío.");
         }
     }
-
-
 
 }
