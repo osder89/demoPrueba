@@ -14,3 +14,6 @@ Asegúrate de tener instalados los siguientes requisitos en tu sistema:
 Abrir el tu IDE Favorito y ejecutar los siguientes comando 
 - mvn clean and mvn install
 Cambiar a tus credenciales para la bade de datos en el archivo properties.yml
+
+##Postman 
+Importar en tu postman el archivo collection para poder realizar las pruebas a las apis ten en cuenta el puerto en que estas levantando tu local
